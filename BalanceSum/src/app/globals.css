@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 112 33% 96%;
+    --foreground: 115 55% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 115 55% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 115 55% 10%;
+    --primary: 115 55% 49%;
+    --primary-foreground: 112 33% 98%;
+    --secondary: 79 100% 90%;
+    --secondary-foreground: 115 55% 20%;
+    --muted: 112 33% 90%;
+    --muted-foreground: 115 20% 40%;
+    --accent: 79 100% 59%;
+    --accent-foreground: 115 55% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 115 20% 85%;
+    --input: 115 20% 85%;
+    --ring: 115 55% 49%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.seesaw-transition {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ball-bounce {
+  animation: ballBounce 0.5s ease-out;
+}
+
+@keyframes ballBounce {
+  0% { transform: translateY(-100px); opacity: 0; }
+  60% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
